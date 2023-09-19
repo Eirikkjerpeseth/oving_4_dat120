@@ -2,7 +2,7 @@
 # antall elementer i lista som er større enn eller lik den oppgitte verdien og returnere dett 
 
 
-def liste(liste, x): 
+def liste(lst, x): 
     antall= 0 
     for element in list: 
         if element >= x: 
