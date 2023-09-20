@@ -10,8 +10,8 @@ def funksjontemp(temperaturer):
             vekst = temperaturer - 5 
             sum += vekst 
     return sum 
-    if sum <= 0: 
-        print("Negativ vekst, planten dør.")
+#    if sum <= 0: 
+       # print("Negativ vekst, planten dør.") "få denne til å gi visst sum = 0 eller negativ = planten dør"
     
 
 
