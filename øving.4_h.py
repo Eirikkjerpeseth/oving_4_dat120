@@ -12,7 +12,8 @@ def funksjontemp(liste):
 
 
 
-print
+print print
+
 
 
 resultat = funksjontemp([4,7,15]) 
