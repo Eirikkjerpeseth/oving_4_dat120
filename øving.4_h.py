@@ -10,6 +10,11 @@ def funksjontemp(temperaturer):
             vekst = temperaturer - 5 
             sum += vekst 
     return sum 
+    if sum <= 0: 
+        print("Negativ vekst, planten dør.")
+    
+
+
 
 resultat = funksjontemp([4,7,15]) 
 print(resultat) 
