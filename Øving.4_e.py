@@ -5,9 +5,9 @@
 
 
 def Differanse_i_liste(liste_1): 
-    differanse = 0 
-    for n in range (len(liste_1)-1): 
-        diff = liste_1[i +1]-liste_1[i] 
+    differanse =[]
+    for i in range (len(liste_1)-1): 
+        diff = liste_1[i+1]-liste_1[i] 
         differanse.append(diff) 
     return differanse 
 
