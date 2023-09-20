@@ -1,12 +1,14 @@
 # Skriv en funksjon som tar inn ei liste med flyttall og en enkeltverdi. Funksjonen skal telle
 # antall elementer i lista som er større enn eller lik den oppgitte verdien og returnere dett 
+#heltall_liste = [1,1,1,1,2] 
 
 
-def liste(lst, x): 
+def liste(heltall_liste= [1,1,1,1,2] , x=1): 
     antall= 0 
-    for element in list: 
-        if element >= x: 
+    for n in heltall_liste: 
+        if n >= x: 
             antall += 1 
     return antall
-
+result = liste() 
+print(result) 
 
