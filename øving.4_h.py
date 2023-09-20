@@ -4,15 +4,14 @@
 # (for 4) + 2 (for 7) + 10 (for 15). 
 
 def funksjontemp(liste): 
-    temperatur = 0 
+    sum = 0 
     for n in liste: 
-        if n >= 5: 
-            
+        if n  >= 5: 
+            sum += temperatur 
     return temperatur
 
 
 
-print print
 
 
 
