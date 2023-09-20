@@ -3,17 +3,14 @@
 # en funksjon som regner ut summen av alle tall over 5 i lista. Så i lista [4, 7, 15] blir summen 0
 # (for 4) + 2 (for 7) + 10 (for 15). 
 
-def funksjontemp(liste): 
+def funksjontemp(temperaturer): 
     sum = 0 
-    for n in liste: 
-        if n  >= 5: 
-            sum += temperatur 
-    return temperatur
-
-
-
-
-
+    for temperaturer in temperaturer: 
+        if temperaturer > 5: 
+            vekst = temperaturer - 5 
+            sum += vekst 
+    return sum 
 
 resultat = funksjontemp([4,7,15]) 
-print(resultat)
+print(resultat) 
+
