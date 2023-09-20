@@ -2,11 +2,14 @@
 # funksjonen regne ut differansen mellom neste tall i lista og dette tallet. Differansene skal
 # legges inn i ei ny liste 
 
-def calculate_differences(lst):
-    differences = []
-    for i in range(len(lst) - 1):
-        diff = lst[i + 1] - lst[i]
-        differences.append(diff)
-    return differences
 
 
+def Differanse_i_liste(liste_1): 
+    differanse = 0 
+    for n in range (len(liste_1)-1): 
+        diff = liste_1[i +1]-liste_1[i] 
+        differanse.append(diff) 
+    return differanse 
+
+resultat = Differanse_i_liste([1,7,5,4,9]) 
+print(resultat) 
