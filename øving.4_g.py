@@ -7,18 +7,26 @@
 # temaet lineær regresjon, minste kvadraters metode 
 
 
-#x_koordinat = [2,4,6,8,10]
-#y_koordinat = [1,3,5,7,9] 
 
-def trend_datasett(): 
-    x_koordinat = [2,4,6,8,10]
-    y_koordinat = [1,3,5,7,9]  
+def trend_datasett(x,y): 
+    # finner gjennomsnitt av listene sum(n) / lengde(n)
+    gjennomsnitt_x = sum(x) / len(x) 
+    gjennomsnitt_y = sum(y) / len(y) 
 
-    a = 0 
-    b = = 
+    # Beregner a, stigningstallet
+    numerator = sum((x[i] - gjennomsnitt_x) * (y[i] - gjennomsnitt_y) for i in range(len(x)))
+    denominator = sum((x[i] - gjennomsnitt_x) ** 2 for i in range(len(x)))
 
+    a = numerator / denominator 
+
+    # beregner skjæringspunktet b, ved å ta gjennomsittav y - a * gjennomsnitt av x 
+    b = gjennomsnitt_y - a * gjennomsnitt_x
+
+    return a,b 
+
+x_koordinat = [2,4,6,8,10]
+y_koordinat = [1,3,5,7,9]  
+
+a,b = trend_datasett(x_koordinat , y_koordinat) 
+print(f"Trenden i datasettet er: verdi = {a:.2f}x + {b:.2f}")
     
-    verdi = ax + b 
-
-    
-
