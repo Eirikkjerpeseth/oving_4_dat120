@@ -2,8 +2,9 @@
 
 oversikt oppgaver: 
 
-Alfred: e) , f), j), m) 
+Alfred: e) , f), j), 
 Eirik: h), l) , k), g), d) 
+Simon: i), m) 
 
 git pull -- rebase
 
