@@ -1,3 +1,8 @@
+#Fila «lister_for_del_1.py» er delt ut sammen med denne øvingen.
+#Bruk funksjonen fra oppgave d) på lista «temperaturer» fra denne fila.
+#Anta at hvert innslag er maksimaltemperaturen for en dag. 
+#Finn antall sommerdager (over 20), høysommerdager (over 25) og tropedager (over 30).
+
 def temperaturer(heltall_liste): 
     sommerdager= 0 
     høysommerdager= 0

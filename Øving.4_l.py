@@ -1,3 +1,5 @@
+#Bruk funksjonen fra oppgave h) for å finne total vekst for planten gitt lista med temperaturer
+
 def funksjontemp(temperaturer): 
     sum = 0 
     for temperaturer in temperaturer: 

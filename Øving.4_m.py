@@ -1,3 +1,5 @@
+#Bruk funksjonen fra oppgave f) på den oppgitte lista «døgn-nedbør» for å finne den lengste
+#perioden uten nedbør
 
 def sekvens_av_0(liste):
     lengde=0
