@@ -18,8 +18,8 @@ Created on Thu Nov  9 12:23:14 2023
 # (for 4) + 2 (for 7) + 10 (for 15). 
 
 
-import matplotlib as plot
-
+import matplotlib.pyplot as plt
+import numpy as np
 
 
 navnliste = []
@@ -119,35 +119,26 @@ for år, vekst in vekst_resultater.items():
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# La oss anta at du allerede har opprettet "årsvis_temperaturdata" med separate lister for hvert år
-
-# Gå gjennom hvert år i "årsvis_temperaturdata" og skriv ut temperaturdataene for hvert år
-#for år, temperaturliste in årsvis_temperaturdata.items():
- #   print("Temperaturdata for alle år:")
-    
-  #  for temperatur in temperaturliste:
-   #     print(temperatur)
-        
-
-    #print() 
-
-
-
-
-
-
  #Innstillinger for plott
+ 
+plt.figure()
+år_liste = list(vekst_resultater.keys())
+vekst_liste = list(vekst_resultater.values())     
+     
+plt.plot(år_liste, vekst_liste, marker='o')
+     
+     #Overskrifter
+plt.xlabel('År')
+plt.ylabel('Plantevekst')
+plt.title('Plantens vekst over årene')
+plt.grid(True)
+
+
+#justering av utforming
+plt.xticks(rotation='vertical')
+plt.tight_layout()
+     
+plt.show()
+ 
+ 
+ 
