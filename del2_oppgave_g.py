@@ -41,13 +41,6 @@ def jabba():
             hoyestmiddelvind.append(ordene[7])
 jabba() 
 
-
-
-
-
-
-
-
 def antall_penværsdager(datoer, skydekke):
     antall_dager_per_år = {}
     antall_penværsdager = 0
@@ -74,10 +67,17 @@ def antall_penværsdager(datoer, skydekke):
         else:
             # Oppdater antall penværsdager for det gjeldende året
             år = int(datoer[i].split(".")[-1])
-            antall_dager_per_år[år] = max(antall_penværsdager, antall_dager_per_år.get(år, 0))
+            antall_dager_per_år[år] = antall_penværsdager + antall_dager_per_år.get(år, 0)
             antall_penværsdager = 0
 
     return antall_dager_per_år, år_med_flest_penværsdager, maks_penværsdager
+
+
+
+
+
+
+
 
 
 antall_dager_per_år, år_med_flest_penværsdager, maks_penværsdager = antall_penværsdager(datoliste,
@@ -96,4 +96,11 @@ plt.xlabel('År')
 plt.ylabel('Antall penværsdager (dager)')
 plt.title('Antall penværsdager per år')
 plt.show() 
+
+
+
+
+
+
+
 
