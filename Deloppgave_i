@@ -1,0 +1,75 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Nov 10 13:19:30 2023
+
+@author: simoo
+"""
+
+import matplotlib.pyplot as plt
+import csv
+from datetime import datetime
+
+def Differanse_i_liste(liste_1): 
+    differanse =[]
+    for i in range(len(liste_1)-1): 
+        diff = liste_1[i+1] - liste_1[i] 
+        differanse.append(diff) 
+    return differanse 
+
+def gjennomsnitt_temp(dataset):
+    gjennomsnittsliste = {}
+
+    for row in dataset:
+        try:
+            dato = datetime.strptime(row[2], "%d.%m.%Y")
+        except ValueError:
+            continue
+
+        maned_og_ar = dato.strftime("%Y-%m")  # Bruk år og måned som nøkkel
+        try:
+            temperatur = float(row[5].replace(',', '.'))  # Antar at temperaturen er i kolonne 5
+        except ValueError:
+            continue
+        
+        if maned_og_ar not in gjennomsnittsliste:
+            gjennomsnittsliste[maned_og_ar] = temperatur
+        else:
+            gjennomsnittsliste[maned_og_ar] = (gjennomsnittsliste[maned_og_ar] + temperatur) / 2
+
+    return gjennomsnittsliste
+
+csv_file_path = 'snoedybder_vaer_en_stasjon_dogn.csv'
+
+dataset = []
+
+with open(csv_file_path, 'r') as csvfile:
+    csvreader = csv.reader(csvfile, delimiter=';')
+    for row in csvreader:
+        dataset.append(row)
+
+header = dataset[0]
+dataset = dataset[1:]
+
+resultat_gjennomsnitt = gjennomsnitt_temp(dataset)
+print("Gjennomsnittstemperaturer:", resultat_gjennomsnitt)
+
+resultat_differanse = Differanse_i_liste(list(resultat_gjennomsnitt.values()))
+print("Differanser:", resultat_differanse)
+
+# Plott gjennomsnittstemperaturer
+plt.figure(figsize=(10, 5))
+plt.subplot(2, 1, 1)
+plt.plot(resultat_gjennomsnitt.keys(), resultat_gjennomsnitt.values(), marker='o')
+plt.title('Gjennomsnittstemperaturer')
+plt.xlabel('Måned og år')
+plt.ylabel('Temperatur')
+
+# Plott differanser
+plt.subplot(2, 1, 2)
+plt.plot(list(resultat_gjennomsnitt.keys())[1:], resultat_differanse, marker='o')
+plt.title('Differanser i gjennomsnittstemperaturer')
+plt.xlabel('Måned og år')
+plt.ylabel('Differanse')
+
+plt.tight_layout()
+plt.show()
